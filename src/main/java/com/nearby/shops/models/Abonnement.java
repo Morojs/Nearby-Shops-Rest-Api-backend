@@ -8,14 +8,21 @@ import java.util.Date;
 @Entity
 @Table
 public class Abonnement {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    private Date dateAbonnement;
-    private double prixAbonnement;
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        private Integer id;
+        private Date dateAbonnement;
+        private double prixAbonnement;
 
     public Abonnement() {}
+
+    public void setDateAbonnement(Date dateAbonnement) {
+        this.dateAbonnement = dateAbonnement;
+    }
+
+    public void setPrixAbonnement(double prixAbonnement) {
+        this.prixAbonnement = prixAbonnement;
+    }
 
     public Abonnement(int idAbonnement, Date dateAbonnement, double prixAbonnement) {
         this.id = idAbonnement;
