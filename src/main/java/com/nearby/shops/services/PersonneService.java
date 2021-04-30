@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PersonneService implements CrudDao<Personne> {
@@ -16,6 +17,11 @@ public class PersonneService implements CrudDao<Personne> {
     @Autowired
     public PersonneService(PersonneRepository personneRepository) {
         this.personneRepository = personneRepository;
+    }
+
+    @Override
+    public Optional<Personne> findByID(Integer arg) {
+         return this.personneRepository.findById(arg);
     }
 
     @Override

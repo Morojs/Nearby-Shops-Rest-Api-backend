@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/api/v1/shops/personne")
@@ -20,18 +21,22 @@ public class PersonneController {
     public List<Personne> GetAll(){
         return this.personneService.getAll();
     }
+    @GetMapping("/{id}")
+    public Optional<Personne> GetByID(@PathVariable Integer id){
+        return this.personneService.findByID(id);
+    }
 
     @PostMapping
     public Personne Add(@RequestBody Personne nouvelPersonne) {
         return this.personneService.add(nouvelPersonne);
     }
 
-    @DeleteMapping("/personne/{id}")
+    @DeleteMapping("/{id}")
     public void DeleteById(@PathVariable Integer id) {
         this.personneService.deleteById(id);
     }
 
-    @PutMapping("/personne/{id}")
+    @PutMapping("/{id}")
     Personne update(@RequestBody Personne nouvellePersonne, @PathVariable Integer id) {
         return this.personneService.update(nouvellePersonne,id);
     }
