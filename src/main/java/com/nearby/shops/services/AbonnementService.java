@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AbonnementService implements CrudDao<Abonnement> {
@@ -16,6 +17,11 @@ public class AbonnementService implements CrudDao<Abonnement> {
     @Autowired
     public AbonnementService(AbonnementRepository abonnementRepository) {
         this.abonnementRepository = abonnementRepository;
+    }
+
+    @Override
+    public Optional<Abonnement> findByID(Integer arg) {
+        return this.abonnementRepository.findById(arg);
     }
 
     @Override
@@ -44,5 +50,4 @@ public class AbonnementService implements CrudDao<Abonnement> {
     public List<Abonnement> getAll() {
         return (List<Abonnement>) this.abonnementRepository.findAll();
     }
-
 }
