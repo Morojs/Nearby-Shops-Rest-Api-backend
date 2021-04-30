@@ -20,22 +20,22 @@ public class AbonnementService implements CrudDao<Abonnement> {
     }
 
     @Override
-    public Optional<Abonnement> findByID(Integer arg) {
+    public Optional<Abonnement> FindByID(Integer arg) {
         return this.abonnementRepository.findById(arg);
     }
 
     @Override
-    public Abonnement add(Abonnement arg) {
+    public Abonnement Add(Abonnement arg) {
         return this.abonnementRepository.save(arg);
     }
 
     @Override
-    public void deleteById(Integer arg) {
+    public void DeleteById(Integer arg) {
         this.abonnementRepository.deleteById(arg);
     }
 
     @Override
-    public Abonnement update(Abonnement obj, Integer arg) {
+    public Abonnement Update(Abonnement obj, Integer arg) {
             return this.abonnementRepository.findById(arg)
                     .map( item -> {
                         item.setDateAbonnement(obj.getDateAbonnement());
@@ -47,7 +47,7 @@ public class AbonnementService implements CrudDao<Abonnement> {
                     });
         }
     @Override
-    public List<Abonnement> getAll() {
+    public List<Abonnement> GetAll() {
         return (List<Abonnement>) this.abonnementRepository.findAll();
     }
 }

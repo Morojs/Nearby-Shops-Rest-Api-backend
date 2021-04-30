@@ -21,25 +21,25 @@ public class AbonnementController {
 
     @GetMapping
     public List<Abonnement> GetAll(){
-        return this.abonnementService.getAll();
+        return this.abonnementService.GetAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Abonnement> GetByID(@PathVariable Integer id) {return this.abonnementService.findByID(id);}
+    public Optional<Abonnement> GetByID(@PathVariable Integer id) {return this.abonnementService.FindByID(id);}
 
     @PostMapping
     public Abonnement Add(@RequestBody Abonnement nouvelAbonnement) {
-        return this.abonnementService.add(nouvelAbonnement);
+        return this.abonnementService.Add(nouvelAbonnement);
     }
 
     @DeleteMapping("/{id}")
     public void DeleteById(@PathVariable Integer id) {
-         this.abonnementService.deleteById(id);
+         this.abonnementService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    Abonnement update(@RequestBody Abonnement nouvelAbonnemnt, @PathVariable Integer id) {
-        return this.abonnementService.update(nouvelAbonnemnt,id);
+    Abonnement Update(@RequestBody Abonnement nouvelAbonnemnt, @PathVariable Integer id) {
+        return this.abonnementService.Update(nouvelAbonnemnt,id);
     }
 
 

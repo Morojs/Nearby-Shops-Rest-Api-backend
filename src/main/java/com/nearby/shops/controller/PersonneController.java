@@ -19,25 +19,25 @@ public class PersonneController {
 
     @GetMapping
     public List<Personne> GetAll(){
-        return this.personneService.getAll();
+        return this.personneService.GetAll();
     }
     @GetMapping("/{id}")
     public Optional<Personne> GetByID(@PathVariable Integer id){
-        return this.personneService.findByID(id);
+        return this.personneService.FindByID(id);
     }
 
     @PostMapping
     public Personne Add(@RequestBody Personne nouvelPersonne) {
-        return this.personneService.add(nouvelPersonne);
+        return this.personneService.Add(nouvelPersonne);
     }
 
     @DeleteMapping("/{id}")
     public void DeleteById(@PathVariable Integer id) {
-        this.personneService.deleteById(id);
+        this.personneService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    Personne update(@RequestBody Personne nouvellePersonne, @PathVariable Integer id) {
-        return this.personneService.update(nouvellePersonne,id);
+    Personne Update(@RequestBody Personne nouvellePersonne, @PathVariable Integer id) {
+        return this.personneService.Update(nouvellePersonne,id);
     }
 }

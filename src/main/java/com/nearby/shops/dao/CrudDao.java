@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CrudDao<T> {
-    public Optional<T> findByID(Integer arg);
-    public T add(T arg);
-    public void deleteById(Integer arg);
-    public T update(T obj,Integer arg);
-    public List<T> getAll();
+    public Optional<T> FindByID(Integer arg);
+    public T Add(T arg);
+    public void DeleteById(Integer arg);
+    public T Update(T obj,Integer arg);
+    public List<T> GetAll();
 
 }
