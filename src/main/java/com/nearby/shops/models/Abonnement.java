@@ -1,10 +1,10 @@
 package com.nearby.shops.models;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 @Entity
 @Table
 public class Abonnement {
@@ -13,9 +13,15 @@ public class Abonnement {
         private Integer id;
         private Date dateAbonnement;
         private double prixAbonnement;
+        @OneToMany(targetEntity = ClientAbonne.class,mappedBy = "abonnement")
+        private List<ClientAbonne> listClientAbonne=new ArrayList<>();
 
     public Abonnement() {}
-
+    public Abonnement(int idAbonnement, Date dateAbonnement, double prixAbonnement) {
+        this.id = idAbonnement;
+        this.dateAbonnement = dateAbonnement;
+        this.prixAbonnement = prixAbonnement;
+    }
     public void setDateAbonnement(Date dateAbonnement) {
         this.dateAbonnement = dateAbonnement;
     }
@@ -24,11 +30,11 @@ public class Abonnement {
         this.prixAbonnement = prixAbonnement;
     }
 
-    public Abonnement(int idAbonnement, Date dateAbonnement, double prixAbonnement) {
-        this.id = idAbonnement;
-        this.dateAbonnement = dateAbonnement;
-        this.prixAbonnement = prixAbonnement;
+    public List<ClientAbonne> getListClientAbonne() {
+        return listClientAbonne;
     }
+
+
 
     public int getId() {
         return id;
