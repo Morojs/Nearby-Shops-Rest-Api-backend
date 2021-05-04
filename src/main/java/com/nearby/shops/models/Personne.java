@@ -1,12 +1,11 @@
 package com.nearby.shops.models;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import javax.persistence.*;
 import java.util.Date;
 @Entity
 @Table
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="discriminant",discriminatorType = DiscriminatorType.INTEGER)
 public class Personne {
 
     @Id
