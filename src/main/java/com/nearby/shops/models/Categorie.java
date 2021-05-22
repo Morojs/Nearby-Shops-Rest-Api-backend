@@ -1,5 +1,7 @@
 package com.nearby.shops.models;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -9,12 +11,15 @@ public class Categorie {
     private Integer id;
     private String nomCategorie;
     private String designation;
+    @OneToMany(targetEntity = Produit.class,mappedBy = "Categorie")
+    private List<Produit> listProduit=new ArrayList<>();
     public Categorie(){}
 
-    public Categorie(Integer id, String nomCategorie, String designation) {
+    public Categorie(Integer id, String nomCategorie, String designation, List<Produit> listProduit) {
         this.id = id;
         this.nomCategorie = nomCategorie;
-        designation = designation;
+        this.designation = designation;
+        this.listProduit = listProduit;
     }
 
     public Integer getId() {
@@ -39,6 +44,14 @@ public class Categorie {
 
     public void setDesignation(String designation) {
         this.designation = designation;
+    }
+
+    public List<Produit> getListProduit() {
+        return listProduit;
+    }
+
+    public void setListProduit(List<Produit> listProduit) {
+        this.listProduit = listProduit;
     }
 
     @Override

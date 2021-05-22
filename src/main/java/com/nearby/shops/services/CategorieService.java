@@ -40,6 +40,7 @@ public class CategorieService implements CrudDao<Categorie>{
                 .map(item->{
                     item.setNomCategorie(obj.getNomCategorie());
                     item.setDesignation(obj.getDesignation());
+                    item.setListProduit(obj.getListProduit());
                     return this.categorieRepository.save(item);
                 }).orElseGet(()->{
                             obj.setId(arg);
