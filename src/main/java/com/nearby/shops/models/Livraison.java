@@ -10,6 +10,7 @@ public class Livraison {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Date dateLivraison;
+    @ManyToOne
     @JoinColumn(name = "idCommande", nullable = false)
     private Commande idCommande;
 
