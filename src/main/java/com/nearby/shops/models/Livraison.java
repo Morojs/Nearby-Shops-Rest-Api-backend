@@ -8,7 +8,7 @@ import java.util.Date;
 public class Livraison {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Integer idLivraison;
     private Date dateLivraison;
     @ManyToOne
     @JoinColumn(name = "idCommande", nullable = false)
@@ -17,18 +17,18 @@ public class Livraison {
     public Livraison() {
     }
 
-    public Livraison(Integer id, Date dateLivraison, Commande idCommande) {
-        this.id = id;
+    public Livraison(Integer idLivraison, Date dateLivraison, Commande idCommande) {
+        this.idLivraison = idLivraison;
         this.dateLivraison = dateLivraison;
         this.idCommande = idCommande;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getIdLivraison() {
+        return idLivraison;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdLivraison(Integer id) {
+        this.idLivraison = id;
     }
 
     public Date getDateLivraison() {
@@ -50,7 +50,7 @@ public class Livraison {
     @Override
     public String toString() {
         return "Livraison{" +
-                "id=" + id +
+                "id=" + idLivraison +
                 ", dateLivraison=" + dateLivraison +
                 ", idCommande=" + idCommande +
                 '}';

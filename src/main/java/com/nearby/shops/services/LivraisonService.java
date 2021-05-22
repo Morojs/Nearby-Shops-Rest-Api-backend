@@ -42,7 +42,7 @@ public class LivraisonService implements CrudDao<Livraison> {
                     item.setIdCommande(obj.getIdCommande());
                     return this.livraisonRepository.save(item);
                 }).orElseGet(()->{
-                            obj.setId(arg);
+                            obj.setIdLivraison(arg);
                             return this.livraisonRepository.save(obj);
                         }
                 );
