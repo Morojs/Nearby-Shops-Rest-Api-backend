@@ -8,10 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-<<<<<<< HEAD
-=======
 
->>>>>>> 5ca56bda3ce1dcfc9fbdb777e6624efcc616e442
 @Service
 public class CarteBancaireService implements CrudDao<CarteBancaire> {
 
