@@ -1,24 +1,32 @@
 package com.nearby.shops.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
 public class Produit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Integer idProduit;
     private String nom;
     private String reference;
     private String description;
     private Double prix;
     private Integer qteStock;
+    @ManyToOne @JoinColumn(name="idBoutique", nullable=false)
+    private Boutique boutique;
+    @ManyToMany
+    @JoinTable( name = "T_Commande_Produit_Associations",
+            joinColumns = @JoinColumn( name = "idProduit" ),
+            inverseJoinColumns = @JoinColumn( name = "idCommande" ) )
+    private List<Commande> commande = new ArrayList<>();
 
     public Produit() {
     }
-
-    public Produit(Integer id, String nom, String reference, String description, Double prix, Integer qteStock) {
-        this.id = id;
+    public Produit(Integer idProduit, String nom, String reference, String description, Double prix, Integer qteStock) {
+        this.idProduit = idProduit;
         this.nom = nom;
         this.reference = reference;
         this.description = description;
@@ -26,12 +34,12 @@ public class Produit {
         this.qteStock = qteStock;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getIdProduit() {
+        return idProduit;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdProduit(Integer id) {
+        this.idProduit = id;
     }
 
     public String getNom() {
@@ -77,7 +85,7 @@ public class Produit {
     @Override
     public String toString() {
         return "Produit{" +
-                "id=" + id +
+                "id=" + idProduit +
                 ", nom='" + nom + '\'' +
                 ", reference='" + reference + '\'' +
                 ", description='" + description + '\'' +

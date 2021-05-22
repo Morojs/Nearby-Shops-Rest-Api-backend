@@ -10,37 +10,37 @@ import java.util.Date;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    private Date datepayment;
+    private Integer idPayement;
+    private Date datePayment;
 
     public Payment(){}
 
-    public Payment(Integer id, Date datepayment) {
-        this.id = id;
-        this.datepayment = datepayment;
+    public Payment(Integer idPayement, Date datepayment) {
+        this.idPayement = idPayement;
+        this.datePayment = datepayment;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getIdPayement() {
+        return idPayement;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdPayement(Integer id) {
+        this.idPayement = id;
     }
 
-    public Date getDatepayment() {
-        return datepayment;
+    public Date getDatePayment() {
+        return datePayment;
     }
 
-    public void setDatepayment(Date datepayment) {
-        this.datepayment = datepayment;
+    public void setDatePayment(Date datepayment) {
+        this.datePayment = datepayment;
     }
 
     @Override
     public String toString() {
         return "Payment{" +
-                "id=" + id +
-                ", datepayment=" + datepayment +
+                "id=" + idPayement +
+                ", datepayment=" + datePayment +
                 '}';
     }
 }

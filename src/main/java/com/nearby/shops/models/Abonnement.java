@@ -10,7 +10,7 @@ import java.util.List;
 public class Abonnement {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        private Integer id;
+        private Integer idAbonnement;
         private Date dateAbonnement;
         private double prixAbonnement;
         @OneToMany(targetEntity = ClientAbonne.class,mappedBy = "abonnement")
@@ -18,7 +18,7 @@ public class Abonnement {
 
     public Abonnement() {}
     public Abonnement(int idAbonnement, Date dateAbonnement, double prixAbonnement) {
-        this.id = idAbonnement;
+        this.idAbonnement = idAbonnement;
         this.dateAbonnement = dateAbonnement;
         this.prixAbonnement = prixAbonnement;
     }
@@ -36,12 +36,12 @@ public class Abonnement {
 
 
 
-    public int getId() {
-        return id;
+    public int getIdAbonnement() {
+        return idAbonnement;
     }
 
-    public void setId(int idAbonnement) {
-        this.id = idAbonnement;
+    public void setIdAbonnement(int idAbonnement) {
+        this.idAbonnement = idAbonnement;
     }
 
     public Date getDateAbonnement() {
@@ -51,7 +51,7 @@ public class Abonnement {
     @Override
     public String toString() {
         return "Abonnement{" +
-                "idAbonnement=" + id +
+                "idAbonnement=" + idAbonnement +
                 ", dateAbonnement=" + dateAbonnement +
                 ", prixAbonnement=" + prixAbonnement +
                 '}';

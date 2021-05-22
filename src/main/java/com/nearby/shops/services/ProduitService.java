@@ -45,7 +45,7 @@ public class ProduitService implements CrudDao<Produit>{
                     item.setQteStock(obj.getQteStock());
                     return this.produitRepository.save(item);
                 }).orElseGet(()->{
-                            obj.setId(arg);
+                            obj.setIdProduit(arg);
                             return this.produitRepository.save(obj);
                         }
                 );

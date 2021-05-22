@@ -35,7 +35,7 @@ public class CashOnDeliveryService implements CrudDao<CashOnDelivery> {
     public CashOnDelivery Update(CashOnDelivery obj, Integer arg) {
         return this.cashOnDeliveryRepository.findById(arg)
                 .map(item->{
-                    item.setDatepayment(obj.getDatepayment());
+                    item.setDatePayment(obj.getDatePayment());
                     item.setNumCash((obj.getNumCash()));
                     item.setNomLivreur(obj.getNomLivreur());
                     item.setCinClient(obj.getCinClient());
@@ -43,7 +43,7 @@ public class CashOnDeliveryService implements CrudDao<CashOnDelivery> {
                     item.setMontant(obj.getMontant());
                     return this.cashOnDeliveryRepository.save(item);
                 }).orElseGet(()->{
-                    obj.setId(arg);
+                    obj.setIdPayement(arg);
                     return this.cashOnDeliveryRepository.save(obj);
                 });
     }

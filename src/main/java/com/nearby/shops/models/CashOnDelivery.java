@@ -1,14 +1,13 @@
 package com.nearby.shops.models;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table
 @DiscriminatorValue("0")
 public class CashOnDelivery extends Payment{
+
     private int numCash;
     private String nomLivreur;
     private String cinClient;

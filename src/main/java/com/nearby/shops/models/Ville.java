@@ -19,7 +19,6 @@ public class Ville {
 
     public Ville() {
     }
-
     public List<Boutique> getListBoutique() {
         return listBoutique;
     }
