@@ -11,7 +11,7 @@ public class Categorie {
     private Integer id;
     private String nomCategorie;
     private String designation;
-    @OneToMany(targetEntity = Produit.class,mappedBy = "Categorie")
+    @OneToMany(targetEntity = Produit.class,mappedBy = "categorie")
     private List<Produit> listProduit=new ArrayList<>();
     public Categorie(){}
 
