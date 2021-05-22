@@ -22,6 +22,9 @@ public class Commande {
             inverseJoinColumns = @JoinColumn( name = "idProduit" ) )
     private List<Produit> produit = new ArrayList<>();
 
+    @OneToMany(targetEntity = Livraison.class, mappedBy = "idCommande")
+    private List<Livraison> listLivraison = new ArrayList<>();
+
     public Commande(Integer idCommande, Date dateCommande, boolean etatCommande, Personne personne, List<Produit> produit) {
         this.idCommande = idCommande;
         this.dateCommande = dateCommande;
