@@ -19,6 +19,9 @@ public class ClientAbonne extends Personne {
     @OneToMany(targetEntity = Boutique.class, mappedBy = "clientAbonne")
     private List<Boutique> listBoutique = new ArrayList<>();
 
+    @OneToMany(targetEntity = CarteBancaire.class, mappedBy = "clientAbonne")
+    private List<CarteBancaire> listCarte = new ArrayList<>();
+
     public ClientAbonne() {
 
     }

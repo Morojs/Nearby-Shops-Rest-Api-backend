@@ -1,8 +1,6 @@
 package com.nearby.shops.models;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 @Entity
 @Table
@@ -14,6 +12,10 @@ public class CarteBancaire extends Payment {
     private Date dateExperation;
     private int cvv;
     private String type;
+    @ManyToOne
+    @JoinColumn(name = "idPersonne", nullable = false)
+    private ClientAbonne clientAbonne;
+
     public CarteBancaire(){}
 
     public CarteBancaire(String nomSurCarte, int numCarte, Date dateExperation, int cvv, String type) {
