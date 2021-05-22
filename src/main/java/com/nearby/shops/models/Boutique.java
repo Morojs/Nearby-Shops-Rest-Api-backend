@@ -1,25 +1,31 @@
 package com.nearby.shops.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table
 public class Boutique {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer idBoutique;
     private String nomBoutique;
     private String description;
     private String adresseBoutique;
     private String siteWeb;
     private Date dateCreation;
-
+    @OneToOne @JoinColumn(name = "idLocalisation",nullable = false)
+    private Localisation localisation;
     @ManyToOne
     @JoinColumn(name = "idClientAbonne", nullable = false)
     private ClientAbonne clientAbonne;
-
     @ManyToOne
     @JoinColumn(name="idVille",nullable = false)
     private Ville ville;
+    @OneToMany(targetEntity = Produit.class,mappedBy = "boutique")
+    private List<Produit> produit = new ArrayList<>();
 
     public Boutique() {
     }
@@ -46,6 +52,14 @@ public class Boutique {
         return adresseBoutique;
     }
 
+    public Integer getIdBoutique() {
+        return idBoutique;
+    }
+
+    public void setIdBoutique(Integer id) {
+        this.idBoutique = id;
+    }
+
     public String getSiteWeb() {
         return siteWeb;
     }
@@ -69,7 +83,21 @@ public class Boutique {
     public Date getDateCreation() {
         return dateCreation;
     }
+    public Localisation getLocalisation() {
+        return localisation;
+    }
 
+    public void setLocalisation(Localisation localisation) {
+        this.localisation = localisation;
+    }
+
+    public List<Produit> getProduit() {
+        return produit;
+    }
+
+    public void setProduit(List<Produit> produit) {
+        this.produit = produit;
+    }
     public ClientAbonne getClientAbonne() {
         return clientAbonne;
     }
