@@ -4,10 +4,11 @@ import com.nearby.shops.dao.CrudDao;
 import com.nearby.shops.models.CashOnDelivery;
 import com.nearby.shops.repositories.CashOnDeliveryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class CashOnDeliveryService implements CrudDao<CashOnDelivery> {
     private final CashOnDeliveryRepository cashOnDeliveryRepository;
     @Autowired

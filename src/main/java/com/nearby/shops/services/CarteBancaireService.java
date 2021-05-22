@@ -5,10 +5,11 @@ import com.nearby.shops.models.CarteBancaire;
 import com.nearby.shops.repositories.CarteBancaireRepository;
 import com.nearby.shops.repositories.PersonneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class CarteBancaireService implements CrudDao<CarteBancaire> {
     private final CarteBancaireRepository carteBancaireRepository;
     @Autowired
