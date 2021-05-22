@@ -2,14 +2,14 @@ package com.nearby.shops.services;
 
 import com.nearby.shops.dao.CrudDao;
 import com.nearby.shops.models.Payment;
-import com.nearby.shops.models.Personne;
 import com.nearby.shops.repositories.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-
+@Service
 public class PaymentService implements CrudDao<Payment> {
     private final PaymentRepository paymentRepository;
 
@@ -37,10 +37,10 @@ public class PaymentService implements CrudDao<Payment> {
     public Payment Update(Payment obj, Integer arg) {
         return this.paymentRepository.findById(arg)
                 .map( item -> {
-                    item.setDatepayment(obj.getDatepayment());
+                    item.setDatePayment(obj.getDatePayment());
                     return this.paymentRepository.save(item);
                 }).orElseGet(() -> {
-                    obj.setId(arg);
+                    obj.setIdPayement(arg);
                     return this.paymentRepository.save(obj);
                 });
     }
