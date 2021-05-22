@@ -40,6 +40,7 @@ public class CarteBancaireService implements CrudDao<CarteBancaire> {
                     item.setNumCarte(obj.getNumCarte());
                     item.setDateExperation(obj.getDateExperation());
                     item.setCvv(obj.getCvv());
+                    item.setType(obj.getType());
                     return this.carteBancaireRepository.save(item);
 
                 }).orElseGet(()->{

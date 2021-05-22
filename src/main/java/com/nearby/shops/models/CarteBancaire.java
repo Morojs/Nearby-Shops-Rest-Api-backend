@@ -13,21 +13,24 @@ public class CarteBancaire extends Payment {
     private int numCarte;
     private Date dateExperation;
     private int cvv;
+    private String type;
     public CarteBancaire(){}
 
-    public CarteBancaire(Integer id, Date datepayment, String nomSurCarte, int numCarte, Date dateExperation, int cvv) {
+    public CarteBancaire(String nomSurCarte, int numCarte, Date dateExperation, int cvv, String type) {
+        this.nomSurCarte = nomSurCarte;
+        this.numCarte = numCarte;
+        this.dateExperation = dateExperation;
+        this.cvv = cvv;
+        this.type = type;
+    }
+
+    public CarteBancaire(Integer id, Date datepayment, String nomSurCarte, int numCarte, Date dateExperation, int cvv, String type) {
         super(id, datepayment);
         this.nomSurCarte = nomSurCarte;
         this.numCarte = numCarte;
         this.dateExperation = dateExperation;
         this.cvv = cvv;
-    }
-
-    public CarteBancaire(String nomSurCarte, int numCarte, Date dateExperation, int cvv) {
-        this.nomSurCarte = nomSurCarte;
-        this.numCarte = numCarte;
-        this.dateExperation = dateExperation;
-        this.cvv = cvv;
+        this.type = type;
     }
 
     public String getNomSurCarte() {
@@ -62,6 +65,14 @@ public class CarteBancaire extends Payment {
         this.cvv = cvv;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "CarteBancaire{" +
@@ -69,6 +80,7 @@ public class CarteBancaire extends Payment {
                 ", numCarte=" + numCarte +
                 ", dateExperation=" + dateExperation +
                 ", cvv=" + cvv +
+                ", type='" + type + '\'' +
                 '}';
     }
 }
