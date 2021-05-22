@@ -17,6 +17,8 @@ public class Produit {
     private Integer qteStock;
     @ManyToOne @JoinColumn(name="idBoutique", nullable=false)
     private Boutique boutique;
+    @ManyToOne @JoinColumn(name="id", nullable=false)
+    private Categorie categorie;
     @ManyToMany
     @JoinTable( name = "T_Commande_Produit_Associations",
             joinColumns = @JoinColumn( name = "idProduit" ),
@@ -25,13 +27,17 @@ public class Produit {
 
     public Produit() {
     }
-    public Produit(Integer idProduit, String nom, String reference, String description, Double prix, Integer qteStock) {
+
+    public Produit(Integer idProduit, String nom, String reference, String description, Double prix, Integer qteStock, Boutique boutique, Categorie categorie, List<Commande> commande) {
         this.idProduit = idProduit;
         this.nom = nom;
         this.reference = reference;
         this.description = description;
         this.prix = prix;
         this.qteStock = qteStock;
+        this.boutique = boutique;
+        this.categorie = categorie;
+        this.commande = commande;
     }
 
     public Integer getIdProduit() {
@@ -80,6 +86,30 @@ public class Produit {
 
     public void setQteStock(Integer qteStock) {
         this.qteStock = qteStock;
+    }
+
+    public Boutique getBoutique() {
+        return boutique;
+    }
+
+    public void setBoutique(Boutique boutique) {
+        this.boutique = boutique;
+    }
+
+    public Categorie getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
+    }
+
+    public List<Commande> getCommande() {
+        return commande;
+    }
+
+    public void setCommande(List<Commande> commande) {
+        this.commande = commande;
     }
 
     @Override
