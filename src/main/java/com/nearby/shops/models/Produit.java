@@ -1,6 +1,8 @@
 package com.nearby.shops.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -15,6 +17,11 @@ public class Produit {
     private Integer qteStock;
     @ManyToOne @JoinColumn(name="idBoutique", nullable=false)
     private Boutique boutique;
+    @ManyToMany
+    @JoinTable( name = "T_Commande_Produit_Associations",
+            joinColumns = @JoinColumn( name = "idProduit" ),
+            inverseJoinColumns = @JoinColumn( name = "idCommande" ) )
+    private List<Commande> commande = new ArrayList<>();
 
     public Produit() {
     }
