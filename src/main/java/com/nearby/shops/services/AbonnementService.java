@@ -39,6 +39,7 @@ public class AbonnementService implements CrudDao<Abonnement> {
             return this.abonnementRepository.findById(arg)
                     .map( item -> {
                         item.setDateAbonnement(obj.getDateAbonnement());
+                        item.setDescription(obj.getDescription());
                         item.setPrixAbonnement(obj.getPrixAbonnement());
                         return this.abonnementRepository.save(item);
                     }).orElseGet(() -> {
