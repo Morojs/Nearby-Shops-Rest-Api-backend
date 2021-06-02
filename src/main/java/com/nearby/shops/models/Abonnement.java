@@ -12,13 +12,15 @@ public class Abonnement {
         @GeneratedValue(strategy = GenerationType.AUTO)
         private Integer idAbonnement;
         private Date dateAbonnement;
+        private String description;
         private double prixAbonnement;
         @OneToMany(targetEntity = ClientAbonne.class,mappedBy = "abonnement")
         private List<ClientAbonne> listClientAbonne=new ArrayList<>();
 
     public Abonnement() {}
-    public Abonnement(int idAbonnement, Date dateAbonnement, double prixAbonnement) {
+    public Abonnement(int idAbonnement, Date dateAbonnement,String description, double prixAbonnement) {
         this.idAbonnement = idAbonnement;
+        this.description=description;
         this.dateAbonnement = dateAbonnement;
         this.prixAbonnement = prixAbonnement;
     }
@@ -35,6 +37,21 @@ public class Abonnement {
     }
 
 
+    public void setIdAbonnement(Integer idAbonnement) {
+        this.idAbonnement = idAbonnement;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setListClientAbonne(List<ClientAbonne> listClientAbonne) {
+        this.listClientAbonne = listClientAbonne;
+    }
 
     public int getIdAbonnement() {
         return idAbonnement;
