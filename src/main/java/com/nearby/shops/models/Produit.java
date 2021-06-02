@@ -3,6 +3,7 @@ package com.nearby.shops.models;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table
@@ -24,7 +25,8 @@ public class Produit {
             joinColumns = @JoinColumn( name = "idProduit" ),
             inverseJoinColumns = @JoinColumn( name = "idCommande" ) )
     private List<Commande> commande = new ArrayList<>();
-
+    @OneToMany(mappedBy = "produit")
+    Set<LigneCommande> ligneCommande;
     public Produit() {
     }
 

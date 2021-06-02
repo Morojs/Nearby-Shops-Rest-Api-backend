@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.sql.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table
@@ -19,12 +20,14 @@ public class Commande {
     @ManyToMany
     @JoinTable( name = "T_Commande_Produit_Associations",
             joinColumns = @JoinColumn( name = "idCommande" ),
-            inverseJoinColumns = @JoinColumn( name = "idProduit" ) )
+            inverseJoinColumns = @JoinColumn( name = "idProduit" )
+            )
     private List<Produit> produit = new ArrayList<>();
 
     @OneToMany(targetEntity = Livraison.class, mappedBy = "idCommande")
     private List<Livraison> listLivraison = new ArrayList<>();
-
+    @OneToMany(mappedBy = "commande")
+    Set<LigneCommande> ligneCommande;
     public Commande(Integer idCommande, Date dateCommande, boolean etatCommande, Personne personne, List<Produit> produit) {
         this.idCommande = idCommande;
         this.dateCommande = dateCommande;
