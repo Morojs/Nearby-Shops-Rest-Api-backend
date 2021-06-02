@@ -27,8 +27,8 @@ public class PersonneController {
     }
 
     @PostMapping
-    public Personne Add(@RequestBody Personne nouvelPersonne) {
-        return this.personneService.Add(nouvelPersonne);
+    public Personne Add(@RequestBody Personne nouvellePersonne) {
+        return this.personneService.Add(nouvellePersonne);
     }
 
     @DeleteMapping("/{id}")

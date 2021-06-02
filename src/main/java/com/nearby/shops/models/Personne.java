@@ -15,6 +15,7 @@ public class Personne {
     private String prenom;
     private Date dateNaissance;
     private String motDePasse;
+    private String email;
     private String pays;
     private String adresse_1;
     private String adresse_2;
@@ -24,12 +25,13 @@ public class Personne {
 
     public Personne() {}
 
-    public Personne(Integer id, String nom, String prenom, Date dateNaissance, String motDePasse, String pays, String adresse_1, String adresse_2, String codePostal, String telephone, String fix) {
+    public Personne(Integer id, String nom, String prenom, Date dateNaissance, String motDePasse, String email, String pays, String adresse_1, String adresse_2, String codePostal, String telephone, String fix) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
         this.motDePasse = motDePasse;
+        this.email = email;
         this.pays = pays;
         this.adresse_1 = adresse_1;
         this.adresse_2 = adresse_2;
@@ -78,6 +80,14 @@ public class Personne {
         this.motDePasse = motDePasse;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getPays() {
         return pays;
     }
@@ -124,22 +134,5 @@ public class Personne {
 
     public void setFix(String fix) {
         this.fix = fix;
-    }
-
-    @Override
-    public String toString() {
-        return "Personne{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", dateNaissance=" + dateNaissance +
-                ", motDePasse='" + motDePasse + '\'' +
-                ", pays='" + pays + '\'' +
-                ", adresse_1='" + adresse_1 + '\'' +
-                ", adresse_2='" + adresse_2 + '\'' +
-                ", codePostal='" + codePostal + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", fix='" + fix + '\'' +
-                '}';
     }
 }

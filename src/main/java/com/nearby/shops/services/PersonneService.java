@@ -39,9 +39,10 @@ public class PersonneService implements CrudDao<Personne> {
         return this.personneRepository.findById(arg)
                 .map( item -> {
                     item.setNom(obj.getNom());
-                    item.setPrenom(obj.getNom());
+                    item.setPrenom(obj.getPrenom());
                     item.setDateNaissance(obj.getDateNaissance());
                     item.setMotDePasse(obj.getMotDePasse());
+                    item.setEmail(obj.getEmail());
                     item.setPays(obj.getPays());
                     item.setAdresse_1(obj.getAdresse_1());
                     item.setAdresse_2(obj.getAdresse_2());
