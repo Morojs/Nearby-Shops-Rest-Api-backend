@@ -26,10 +26,12 @@ public class ClientAbonne extends Personne {
 
     }
 
-    public ClientAbonne(Integer id, String nom, String prenom, Date dateNaissance, String motDePasse, String pays, String adresse_1, String adresse_2, String codePostal, String telephone, String fix, String cin, Abonnement abonnement) {
-        super(id, nom, prenom, dateNaissance, motDePasse, pays, adresse_1, adresse_2, codePostal, telephone, fix);
+    public ClientAbonne(Integer id, String nom, String prenom, Date dateNaissance, String motDePasse, String email, String pays, String adresse_1, String adresse_2, String codePostal, String telephone, String fix, String cin, Abonnement abonnement, List<Boutique> listBoutique, List<CarteBancaire> listCarte) {
+        super(id, nom, prenom, dateNaissance, motDePasse, email, pays, adresse_1, adresse_2, codePostal, telephone, fix);
         this.cin = cin;
         this.abonnement = abonnement;
+        this.listBoutique = listBoutique;
+        this.listCarte = listCarte;
     }
 
     public String getCin() {
