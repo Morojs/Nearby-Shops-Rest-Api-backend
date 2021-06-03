@@ -18,7 +18,7 @@ public class CarteBancaireService implements CrudDao<CarteBancaire> {
         this.carteBancaireRepository = carteBancaireRepository;
     }
     @Override
-    public Optional<CarteBancaire> FindByID(Integer arg) {
+    public Optional<CarteBancaire> FindByID(Long arg) {
         return this.carteBancaireRepository.findById(arg);
     }
 
@@ -28,13 +28,13 @@ public class CarteBancaireService implements CrudDao<CarteBancaire> {
     }
 
     @Override
-    public void DeleteById(Integer arg) {
+    public void DeleteById(Long arg) {
         this.carteBancaireRepository.deleteById(arg);
 
     }
 
     @Override
-    public CarteBancaire Update(CarteBancaire obj, Integer arg) {
+    public CarteBancaire Update(CarteBancaire obj, Long arg) {
         return this.carteBancaireRepository.findById(arg)
                 .map(item ->{
                     item.setDatePayment(obj.getDatePayment());

@@ -12,11 +12,12 @@ import java.util.Optional;
 public class CashOnDeliveryService implements CrudDao<CashOnDelivery> {
     private final CashOnDeliveryRepository cashOnDeliveryRepository;
     @Autowired
+
     public CashOnDeliveryService(CashOnDeliveryRepository cashOnDeliveryRepository){
         this.cashOnDeliveryRepository=cashOnDeliveryRepository;
     }
     @Override
-    public Optional<CashOnDelivery> FindByID(Integer arg) {
+    public Optional<CashOnDelivery> FindByID(Long arg) {
         return this.cashOnDeliveryRepository.findById(arg);
     }
 
@@ -26,13 +27,13 @@ public class CashOnDeliveryService implements CrudDao<CashOnDelivery> {
     }
 
     @Override
-    public void DeleteById(Integer arg) {
+    public void DeleteById(Long arg) {
         this.cashOnDeliveryRepository.deleteById(arg);
 
     }
 
     @Override
-    public CashOnDelivery Update(CashOnDelivery obj, Integer arg) {
+    public CashOnDelivery Update(CashOnDelivery obj, Long arg) {
         return this.cashOnDeliveryRepository.findById(arg)
                 .map(item->{
                     item.setDatePayment(obj.getDatePayment());

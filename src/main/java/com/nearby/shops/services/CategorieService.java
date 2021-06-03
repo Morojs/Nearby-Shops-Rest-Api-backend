@@ -19,7 +19,7 @@ public class CategorieService implements CrudDao<Categorie>{
     }
 
     @Override
-    public Optional<Categorie> FindByID(Integer arg) {
+    public Optional<Categorie> FindByID(Long arg) {
         return this.categorieRepository.findById(arg);
     }
 
@@ -29,13 +29,13 @@ public class CategorieService implements CrudDao<Categorie>{
     }
 
     @Override
-    public void DeleteById(Integer arg) {
+    public void DeleteById(Long arg) {
         this.categorieRepository.deleteById(arg);
 
     }
 
     @Override
-    public Categorie Update(Categorie obj, Integer arg) {
+    public Categorie Update(Categorie obj, Long arg) {
         return this.categorieRepository.findById(arg)
                 .map(item->{
                     item.setNomCategorie(obj.getNomCategorie());

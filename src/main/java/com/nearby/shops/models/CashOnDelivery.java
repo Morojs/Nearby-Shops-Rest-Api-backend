@@ -24,7 +24,7 @@ public class CashOnDelivery extends Payment{
         this.montant = montant;
     }
 
-    public CashOnDelivery(Integer id, Date datepayment, int numCash, String nomLivreur, String cinClient, Date dateLivraison, Double montant) {
+    public CashOnDelivery(Long id, Date datepayment, int numCash, String nomLivreur, String cinClient, Date dateLivraison, Double montant) {
         super(id, datepayment);
         this.numCash = numCash;
         this.nomLivreur = nomLivreur;

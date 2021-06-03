@@ -9,11 +9,11 @@ import java.util.Date;
 public class Personne {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nom;
     private String prenom;
-    private Date dateNaissance;
+    private Date  dateNaissance;
     private String motDePasse;
     private String email;
     private String pays;
@@ -25,7 +25,7 @@ public class Personne {
 
     public Personne() {}
 
-    public Personne(Integer id, String nom, String prenom, Date dateNaissance, String motDePasse, String email, String pays, String adresse_1, String adresse_2, String codePostal, String telephone, String fix) {
+    public Personne(Long id, String nom, String prenom, Date dateNaissance, String motDePasse, String email, String pays, String adresse_1, String adresse_2, String codePostal, String telephone, String fix) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -40,11 +40,11 @@ public class Personne {
         this.fix = fix;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

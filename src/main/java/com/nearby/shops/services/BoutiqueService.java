@@ -18,7 +18,7 @@ public class BoutiqueService implements CrudDao<Boutique> {
     }
 
     @Override
-    public Optional<Boutique> FindByID(Integer arg) {
+    public Optional<Boutique> FindByID(Long arg) {
         return this.boutiqueRepository.findById(arg);
     }
 
@@ -28,12 +28,12 @@ public class BoutiqueService implements CrudDao<Boutique> {
     }
 
     @Override
-    public void DeleteById(Integer arg) {
+    public void DeleteById(Long arg) {
         this.boutiqueRepository.deleteById(arg);
     }
 
     @Override
-    public Boutique Update(Boutique obj, Integer arg) {
+    public Boutique Update(Boutique obj, Long arg) {
         return this.boutiqueRepository.findById(arg)
                 .map( item -> {
                     item.setNomBoutique(obj.getNomBoutique());

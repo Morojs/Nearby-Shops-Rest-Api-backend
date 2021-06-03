@@ -8,25 +8,25 @@ import java.util.List;
 public class Categorie {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private String nomCategorie;
     private String designation;
     @OneToMany(targetEntity = Produit.class,mappedBy = "categorie")
     private List<Produit> listProduit=new ArrayList<>();
     public Categorie(){}
 
-    public Categorie(Integer id, String nomCategorie, String designation, List<Produit> listProduit) {
+    public Categorie(Long id, String nomCategorie, String designation, List<Produit> listProduit) {
         this.id = id;
         this.nomCategorie = nomCategorie;
         this.designation = designation;
         this.listProduit = listProduit;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

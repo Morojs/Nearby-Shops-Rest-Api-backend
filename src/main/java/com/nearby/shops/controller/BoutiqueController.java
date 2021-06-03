@@ -25,7 +25,7 @@ public class BoutiqueController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Boutique> GetByID(@PathVariable Integer id) {return this.boutiqueService.FindByID(id);}
+    public Optional<Boutique> GetByID(@PathVariable Long id) {return this.boutiqueService.FindByID(id);}
 
     @PostMapping
     public Boutique Add(@RequestBody Boutique nouvelleBoutique) {
@@ -33,12 +33,12 @@ public class BoutiqueController {
     }
 
     @DeleteMapping("/{id}")
-    public void DeleteById(@PathVariable Integer id) {
+    public void DeleteById(@PathVariable Long id) {
         this.boutiqueService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    Boutique Update(@RequestBody Boutique nouvelleBoutique, @PathVariable Integer id) {
+    Boutique Update(@RequestBody Boutique nouvelleBoutique, @PathVariable Long id) {
         return this.boutiqueService.Update(nouvelleBoutique,id);
     }
 

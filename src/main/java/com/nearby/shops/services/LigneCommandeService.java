@@ -18,7 +18,7 @@ public class LigneCommandeService implements CrudDao<LigneCommande> {
         this.ligneCommandeRepository = ligneCommandeRepository;
     }
     @Override
-    public Optional<LigneCommande> FindByID(Integer arg) {
+    public Optional<LigneCommande> FindByID(Long arg) {
         return this.ligneCommandeRepository.findById(arg);
     }
     @Override
@@ -26,10 +26,10 @@ public class LigneCommandeService implements CrudDao<LigneCommande> {
         return this.ligneCommandeRepository.save(arg);
     }
     @Override
-    public void DeleteById(Integer arg) {
+    public void DeleteById(Long arg) {
     }
     @Override
-    public LigneCommande Update(LigneCommande obj, Integer arg) {
+    public LigneCommande Update(LigneCommande obj, Long arg) {
         return this.ligneCommandeRepository.findById(arg)
                 .map(item->{
                     item.setQuantite(obj.getQuantite());

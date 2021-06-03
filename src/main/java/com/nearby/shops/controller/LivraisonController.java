@@ -24,7 +24,7 @@ public class LivraisonController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Livraison> GetByID(@PathVariable Integer id) {return this.livraisonService.FindByID(id);}
+    public Optional<Livraison> GetByID(@PathVariable Long id) {return this.livraisonService.FindByID(id);}
 
     @PostMapping
     public Livraison Add(@RequestBody Livraison nouvelleLivraison) {
@@ -32,12 +32,12 @@ public class LivraisonController {
     }
 
     @DeleteMapping("/{id}")
-    public void DeleteById(@PathVariable Integer id) {
+    public void DeleteById(@PathVariable Long id) {
         this.livraisonService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    Livraison Update(@RequestBody Livraison nouvelleLivraison, @PathVariable Integer id) {
+    Livraison Update(@RequestBody Livraison nouvelleLivraison, @PathVariable Long id) {
         return this.livraisonService.Update(nouvelleLivraison,id);
     }
 }

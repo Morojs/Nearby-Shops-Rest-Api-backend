@@ -11,7 +11,7 @@ import java.util.Set;
 public class Commande {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idCommande;
+    private Long idCommande;
     private Date dateCommande;
     private boolean etatCommande;
     @ManyToOne
@@ -28,7 +28,7 @@ public class Commande {
     private List<Livraison> listLivraison = new ArrayList<>();
     @OneToMany(mappedBy = "commande")
     Set<LigneCommande> ligneCommande;
-    public Commande(Integer idCommande, Date dateCommande, boolean etatCommande, Personne personne, List<Produit> produit) {
+    public Commande(Long idCommande, Date dateCommande, boolean etatCommande, Personne personne, List<Produit> produit) {
         this.idCommande = idCommande;
         this.dateCommande = dateCommande;
         this.etatCommande = etatCommande;
@@ -39,10 +39,10 @@ public class Commande {
     public Commande() {
     }
 
-    public Integer getIdCommande() {
+    public Long getIdCommande() {
         return idCommande;
     }
-    public void setIdCommande(Integer idCommande) {
+    public void setIdCommande(Long idCommande) {
         this.idCommande = idCommande;
     }
 

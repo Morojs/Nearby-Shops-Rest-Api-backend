@@ -10,7 +10,7 @@ import java.util.List;
 public class Boutique {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idBoutique;
+    private Long idBoutique;
     private String nomBoutique;
     private String description;
     private String adresseBoutique;
@@ -52,11 +52,11 @@ public class Boutique {
         return adresseBoutique;
     }
 
-    public Integer getIdBoutique() {
+    public Long getIdBoutique() {
         return idBoutique;
     }
 
-    public void setIdBoutique(Integer id) {
+    public void setIdBoutique(Long id) {
         this.idBoutique = id;
     }
 

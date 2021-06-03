@@ -26,7 +26,7 @@ public class CarteBancaire extends Payment {
         this.type = type;
     }
 
-    public CarteBancaire(Integer id, Date datepayment, String nomSurCarte, int numCarte, Date dateExperation, int cvv, String type) {
+    public CarteBancaire(Long id, Date datepayment, String nomSurCarte, int numCarte, Date dateExperation, int cvv, String type) {
         super(id, datepayment);
         this.nomSurCarte = nomSurCarte;
         this.numCarte = numCarte;

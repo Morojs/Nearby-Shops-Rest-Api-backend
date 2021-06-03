@@ -23,7 +23,7 @@ public class CashOnDeliveryController {
     }
 
     @GetMapping("/{id}")
-    public Optional<CashOnDelivery> GetByID(@PathVariable Integer id) {return this.cashOnDeliveryService.FindByID(id);}
+    public Optional<CashOnDelivery> GetByID(@PathVariable Long id) {return this.cashOnDeliveryService.FindByID(id);}
 
     @PostMapping
     public CashOnDelivery Add(@RequestBody CashOnDelivery nouveauCashOnDelivery) {
@@ -31,12 +31,12 @@ public class CashOnDeliveryController {
     }
 
     @DeleteMapping("/{id}")
-    public void DeleteById(@PathVariable Integer id) {
+    public void DeleteById(@PathVariable Long id) {
         this.cashOnDeliveryService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    CashOnDelivery Update(@RequestBody CashOnDelivery nouveauCashOnDelivery, @PathVariable Integer id) {
+    CashOnDelivery Update(@RequestBody CashOnDelivery nouveauCashOnDelivery, @PathVariable Long id) {
         return this.cashOnDeliveryService.Update(nouveauCashOnDelivery,id);
     }
 

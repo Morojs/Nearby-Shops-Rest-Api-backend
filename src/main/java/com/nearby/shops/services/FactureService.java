@@ -20,7 +20,7 @@ public class FactureService implements CrudDao<Facture> {
     }
 
     @Override
-    public Optional<Facture> FindByID(Integer arg) {
+    public Optional<Facture> FindByID(Long arg) {
         return this.factureRepository.findById(arg);
     }
 
@@ -30,11 +30,11 @@ public class FactureService implements CrudDao<Facture> {
     }
 
     @Override
-    public void DeleteById(Integer arg) {
+    public void DeleteById(Long arg) {
         this.factureRepository.deleteById(arg);
     }
     @Override
-    public Facture Update(Facture obj, Integer arg) {
+    public Facture Update(Facture obj, Long arg) {
         return this.factureRepository.findById(arg)
                 .map(item->{
                     item.setDateFcture(obj.getDateFcture());

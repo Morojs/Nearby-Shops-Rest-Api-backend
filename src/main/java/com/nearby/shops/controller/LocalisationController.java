@@ -24,7 +24,7 @@ public class LocalisationController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Localisation> GetByID(@PathVariable Integer id) {return this.localisationService.FindByID(id);}
+    public Optional<Localisation> GetByID(@PathVariable Long id) {return this.localisationService.FindByID(id);}
 
     @PostMapping
     public Localisation Add(@RequestBody Localisation nouvelleLocalisation) {
@@ -32,12 +32,12 @@ public class LocalisationController {
     }
 
     @DeleteMapping("/{id}")
-    public void DeleteById(@PathVariable Integer id) {
+    public void DeleteById(@PathVariable Long id) {
         this.localisationService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    Localisation Update(@RequestBody Localisation nouvelleLocalisation, @PathVariable Integer id) {
+    Localisation Update(@RequestBody Localisation nouvelleLocalisation, @PathVariable Long id) {
         return this.localisationService.Update(nouvelleLocalisation,id);
     }
 }

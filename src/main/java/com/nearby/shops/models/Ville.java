@@ -10,7 +10,7 @@ import java.util.List;
 public class Ville {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private String nomVille;
 
 
@@ -31,11 +31,11 @@ public class Ville {
         this.nomVille = nomVille;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 

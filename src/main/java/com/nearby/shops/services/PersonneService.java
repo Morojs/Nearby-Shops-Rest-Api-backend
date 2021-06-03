@@ -20,7 +20,7 @@ public class PersonneService implements CrudDao<Personne> {
     }
 
     @Override
-    public Optional<Personne> FindByID(Integer arg) {
+    public Optional<Personne> FindByID(Long arg) {
          return this.personneRepository.findById(arg);
     }
 
@@ -30,12 +30,12 @@ public class PersonneService implements CrudDao<Personne> {
     }
 
     @Override
-    public void DeleteById(Integer arg) {
+    public void DeleteById(Long arg) {
         this.personneRepository.deleteById(arg);
     }
 
     @Override
-    public Personne Update(Personne obj, Integer arg) {
+    public Personne Update(Personne obj,Long arg) {
         return this.personneRepository.findById(arg)
                 .map( item -> {
                     item.setNom(obj.getNom());

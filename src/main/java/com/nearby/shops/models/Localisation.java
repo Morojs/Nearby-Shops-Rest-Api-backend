@@ -7,22 +7,22 @@ import javax.persistence.*;
 public class Localisation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private Double altitude;
     private Double langitude;
     public Localisation(){}
 
-    public Localisation(Integer idLocalisation, Double altitude, Double langitude) {
+    public Localisation(Long idLocalisation, Double altitude, Double langitude) {
         this.id = idLocalisation;
         this.altitude = altitude;
         this.langitude = langitude;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

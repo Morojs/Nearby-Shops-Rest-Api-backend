@@ -19,7 +19,7 @@ public class VilleService implements CrudDao<Ville> {
     }
 
     @Override
-    public Optional<Ville> FindByID(Integer arg) {
+    public Optional<Ville> FindByID(Long arg) {
         return this.villeRepository.findById(arg);
     }
 
@@ -29,12 +29,12 @@ public class VilleService implements CrudDao<Ville> {
     }
 
     @Override
-    public void DeleteById(Integer arg) {
+    public void DeleteById(Long arg) {
         this.villeRepository.deleteById(arg);
     }
 
     @Override
-    public Ville Update(Ville obj, Integer arg) {
+    public Ville Update(Ville obj, Long arg) {
         return this.villeRepository.findById(arg)
                 .map(item->{
                     item.setNomVille(obj.getNomVille());

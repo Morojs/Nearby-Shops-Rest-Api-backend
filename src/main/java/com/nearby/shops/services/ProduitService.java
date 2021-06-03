@@ -19,7 +19,7 @@ public class ProduitService implements CrudDao<Produit>{
     }
 
     @Override
-    public Optional<Produit> FindByID(Integer arg) {
+    public Optional<Produit> FindByID(Long arg) {
         return this.produitRepository.findById(arg);
     }
 
@@ -29,13 +29,13 @@ public class ProduitService implements CrudDao<Produit>{
     }
 
     @Override
-    public void DeleteById(Integer arg) {
+    public void DeleteById(Long arg) {
         this.produitRepository.deleteById(arg);
 
     }
 
     @Override
-    public Produit Update(Produit obj, Integer arg) {
+    public Produit Update(Produit obj, Long arg) {
         return this.produitRepository.findById(arg)
                 .map(item->{
                     item.setNom(obj.getNom());

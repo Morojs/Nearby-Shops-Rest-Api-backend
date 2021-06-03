@@ -23,7 +23,7 @@ public class VilleController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Ville> GetByID(@PathVariable Integer id) {return this.villeService.FindByID(id);}
+    public Optional<Ville> GetByID(@PathVariable Long id) {return this.villeService.FindByID(id);}
 
     @PostMapping
     public Ville Add(@RequestBody Ville nouvelleVille) {
@@ -31,12 +31,12 @@ public class VilleController {
     }
 
     @DeleteMapping("/{id}")
-    public void DeleteById(@PathVariable Integer id) {
+    public void DeleteById(@PathVariable Long id) {
         this.villeService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    Ville Update(@RequestBody Ville nouvelleVille, @PathVariable Integer id) {
+    Ville Update(@RequestBody Ville nouvelleVille, @PathVariable Long id) {
         return this.villeService.Update(nouvelleVille,id);
     }
 }

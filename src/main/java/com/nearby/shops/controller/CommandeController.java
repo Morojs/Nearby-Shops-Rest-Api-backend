@@ -24,7 +24,7 @@ public class CommandeController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Commande> GetByID(@PathVariable Integer id) {
+    public Optional<Commande> GetByID(@PathVariable Long id) {
         return this.commandeService.FindByID(id);
     }
 
@@ -34,12 +34,12 @@ public class CommandeController {
     }
 
     @DeleteMapping("/{id}")
-    public void DeleteById(@PathVariable Integer id) {
+    public void DeleteById(@PathVariable Long id) {
         this.commandeService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    Commande Update(@RequestBody Commande nouvelleCommande, @PathVariable Integer id) {
+    Commande Update(@RequestBody Commande nouvelleCommande, @PathVariable Long id) {
         return this.commandeService.Update(nouvelleCommande, id);
     }
 

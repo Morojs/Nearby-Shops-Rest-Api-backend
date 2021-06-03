@@ -10,7 +10,7 @@ import java.util.Set;
 public class Produit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idProduit;
+    private Long idProduit;
     private String nom;
     private String reference;
     private String description;
@@ -30,7 +30,7 @@ public class Produit {
     public Produit() {
     }
 
-    public Produit(Integer idProduit, String nom, String reference, String description, Double prix, Integer qteStock, Boutique boutique, Categorie categorie, List<Commande> commande) {
+    public Produit(Long idProduit, String nom, String reference, String description, Double prix, Integer qteStock, Boutique boutique, Categorie categorie, List<Commande> commande) {
         this.idProduit = idProduit;
         this.nom = nom;
         this.reference = reference;
@@ -42,11 +42,11 @@ public class Produit {
         this.commande = commande;
     }
 
-    public Integer getIdProduit() {
+    public Long getIdProduit() {
         return idProduit;
     }
 
-    public void setIdProduit(Integer id) {
+    public void setIdProduit(Long id) {
         this.idProduit = id;
     }
 

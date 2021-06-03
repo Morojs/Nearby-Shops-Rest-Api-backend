@@ -19,7 +19,7 @@ public class LivraisonService implements CrudDao<Livraison> {
     }
 
     @Override
-    public Optional<Livraison> FindByID(Integer arg) {
+    public Optional<Livraison> FindByID(Long arg) {
         return this.livraisonRepository.findById(arg);
     }
 
@@ -29,13 +29,13 @@ public class LivraisonService implements CrudDao<Livraison> {
     }
 
     @Override
-    public void DeleteById(Integer arg) {
+    public void DeleteById(Long arg) {
         this.livraisonRepository.deleteById(arg);
 
     }
 
     @Override
-    public Livraison Update(Livraison obj, Integer arg) {
+    public Livraison Update(Livraison obj, Long arg) {
         return this.livraisonRepository.findById(arg)
                 .map(item->{
                     item.setDateLivraison(obj.getDateLivraison());

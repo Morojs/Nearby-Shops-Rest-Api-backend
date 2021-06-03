@@ -19,7 +19,7 @@ public class PaymentService implements CrudDao<Payment> {
     }
 
     @Override
-    public Optional<Payment> FindByID(Integer arg) {
+    public Optional<Payment> FindByID(Long arg) {
         return this.paymentRepository.findById(arg);
     }
 
@@ -29,12 +29,12 @@ public class PaymentService implements CrudDao<Payment> {
     }
 
     @Override
-    public void DeleteById(Integer arg) {
+    public void DeleteById(Long arg) {
         this.paymentRepository.deleteById(arg);
     }
 
     @Override
-    public Payment Update(Payment obj, Integer arg) {
+    public Payment Update(Payment obj, Long arg) {
         return this.paymentRepository.findById(arg)
                 .map( item -> {
                     item.setDatePayment(obj.getDatePayment());

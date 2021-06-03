@@ -8,7 +8,7 @@ import java.util.Date;
 public class Livraison {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idLivraison;
+    private Long idLivraison;
     private Date dateLivraison;
     @ManyToOne
     @JoinColumn(name = "idCommande", nullable = false)
@@ -17,17 +17,17 @@ public class Livraison {
     public Livraison() {
     }
 
-    public Livraison(Integer idLivraison, Date dateLivraison, Commande idCommande) {
+    public Livraison(Long idLivraison, Date dateLivraison, Commande idCommande) {
         this.idLivraison = idLivraison;
         this.dateLivraison = dateLivraison;
         this.idCommande = idCommande;
     }
 
-    public Integer getIdLivraison() {
+    public Long getIdLivraison() {
         return idLivraison;
     }
 
-    public void setIdLivraison(Integer id) {
+    public void setIdLivraison(Long id) {
         this.idLivraison = id;
     }
 

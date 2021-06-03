@@ -10,21 +10,21 @@ import java.util.Date;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idPayement;
+    private Long idPayement;
     private Date datePayment;
 
     public Payment(){}
 
-    public Payment(Integer idPayement, Date datepayment) {
+    public Payment(Long idPayement, Date datepayment) {
         this.idPayement = idPayement;
         this.datePayment = datepayment;
     }
 
-    public Integer getIdPayement() {
+    public Long getIdPayement() {
         return idPayement;
     }
 
-    public void setIdPayement(Integer id) {
+    public void setIdPayement(Long id) {
         this.idPayement = id;
     }
 

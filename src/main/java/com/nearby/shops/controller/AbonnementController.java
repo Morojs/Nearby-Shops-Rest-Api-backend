@@ -25,7 +25,7 @@ public class AbonnementController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Abonnement> GetByID(@PathVariable Integer id) {return this.abonnementService.FindByID(id);}
+    public Optional<Abonnement> GetByID(@PathVariable Long id) {return this.abonnementService.FindByID(id);}
 
     @PostMapping
     public Abonnement Add(@RequestBody Abonnement nouvelAbonnement) {
@@ -33,12 +33,12 @@ public class AbonnementController {
     }
 
     @DeleteMapping("/{id}")
-    public void DeleteById(@PathVariable Integer id) {
+    public void DeleteById(@PathVariable Long id) {
          this.abonnementService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    Abonnement Update(@RequestBody Abonnement nouvelAbonnemnt, @PathVariable Integer id) {
+    Abonnement Update(@RequestBody Abonnement nouvelAbonnemnt, @PathVariable Long id) {
         return this.abonnementService.Update(nouvelAbonnemnt,id);
     }
 

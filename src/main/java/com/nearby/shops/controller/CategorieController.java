@@ -24,7 +24,7 @@ public class CategorieController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Categorie> GetByID(@PathVariable Integer id) {return this.categorieService.FindByID(id);}
+    public Optional<Categorie> GetByID(@PathVariable Long id) {return this.categorieService.FindByID(id);}
 
     @PostMapping
     public Categorie Add(@RequestBody Categorie nouvelleCategorie) {
@@ -32,12 +32,12 @@ public class CategorieController {
     }
 
     @DeleteMapping("/{id}")
-    public void DeleteById(@PathVariable Integer id) {
+    public void DeleteById(@PathVariable Long id) {
         this.categorieService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    Categorie Update(@RequestBody Categorie nouvelleCategorie, @PathVariable Integer id) {
+    Categorie Update(@RequestBody Categorie nouvelleCategorie, @PathVariable Long id) {
         return this.categorieService.Update(nouvelleCategorie,id);
     }
 }

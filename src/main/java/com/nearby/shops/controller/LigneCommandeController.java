@@ -24,7 +24,7 @@ public class LigneCommandeController {
     }
 
     @GetMapping("/{id}")
-    public Optional<LigneCommande> GetByID(@PathVariable Integer id) {return this.ligneCommandeService.FindByID(id);}
+    public Optional<LigneCommande> GetByID(@PathVariable Long id) {return this.ligneCommandeService.FindByID(id);}
 
     @PostMapping
     public LigneCommande Add(@RequestBody LigneCommande nouvelleLigneCommande) {
@@ -32,12 +32,12 @@ public class LigneCommandeController {
     }
 
     @DeleteMapping("/{id}")
-    public void DeleteById(@PathVariable Integer id) {
+    public void DeleteById(@PathVariable Long id) {
         this.ligneCommandeService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    LigneCommande Update(@RequestBody LigneCommande nouvelleLigneCommande, @PathVariable Integer id) {
+    LigneCommande Update(@RequestBody LigneCommande nouvelleLigneCommande, @PathVariable Long id) {
         return this.ligneCommandeService.Update(nouvelleLigneCommande,id);
     }
 

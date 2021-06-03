@@ -19,7 +19,7 @@ public class LocalisationService implements CrudDao<Localisation> {
     }
 
     @Override
-    public Optional<Localisation> FindByID(Integer arg) {
+    public Optional<Localisation> FindByID(Long arg) {
         return this.localisationRepository.findById(arg);
     }
 
@@ -29,13 +29,13 @@ public class LocalisationService implements CrudDao<Localisation> {
     }
 
     @Override
-    public void DeleteById(Integer arg) {
+    public void DeleteById(Long arg) {
         this.localisationRepository.deleteById(arg);
 
     }
 
     @Override
-    public Localisation Update(Localisation obj, Integer arg) {
+    public Localisation Update(Localisation obj, Long arg) {
         return this.localisationRepository.findById(arg)
                 .map(item->{
                     item.setAltitude(obj.getAltitude());

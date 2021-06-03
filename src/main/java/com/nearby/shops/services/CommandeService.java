@@ -20,7 +20,7 @@ public class CommandeService implements CrudDao<Commande> {
     }
 
     @Override
-    public Optional<Commande> FindByID(Integer arg) {
+    public Optional<Commande> FindByID(Long arg) {
         return this.commandeRepository.findById(arg);
     }
 
@@ -30,12 +30,12 @@ public class CommandeService implements CrudDao<Commande> {
     }
 
     @Override
-    public void DeleteById(Integer arg) {
+    public void DeleteById(Long arg) {
         this.commandeRepository.deleteById(arg);
     }
 
     @Override
-    public Commande Update(Commande obj, Integer arg) {
+    public Commande Update(Commande obj, Long arg) {
         return this.commandeRepository.findById(arg)
                 .map(item->{
                     item.setDateCommande(obj.getDateCommande());

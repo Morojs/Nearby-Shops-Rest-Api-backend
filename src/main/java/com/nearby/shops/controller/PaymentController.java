@@ -25,7 +25,7 @@ public class PaymentController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Payment> GetByID(@PathVariable Integer id) {return this.paymentService.FindByID(id);}
+    public Optional<Payment> GetByID(@PathVariable Long id) {return this.paymentService.FindByID(id);}
 
     @PostMapping
     public Payment Add(@RequestBody Payment nouveauPayment) {
@@ -33,12 +33,12 @@ public class PaymentController {
     }
 
     @DeleteMapping("/{id}")
-    public void DeleteById(@PathVariable Integer id) {
+    public void DeleteById(@PathVariable Long id) {
         this.paymentService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    Payment Update(@RequestBody Payment nouveauPayment, @PathVariable Integer id) {
+    Payment Update(@RequestBody Payment nouveauPayment, @PathVariable Long id) {
         return this.paymentService.Update(nouveauPayment,id);
     }
 }

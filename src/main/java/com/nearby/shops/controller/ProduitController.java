@@ -24,7 +24,7 @@ public class ProduitController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Produit> GetByID(@PathVariable Integer id) {return this.produitService.FindByID(id);}
+    public Optional<Produit> GetByID(@PathVariable Long id) {return this.produitService.FindByID(id);}
 
     @PostMapping
     public Produit Add(@RequestBody Produit nouvelleProduit) {
@@ -32,12 +32,12 @@ public class ProduitController {
     }
 
     @DeleteMapping("/{id}")
-    public void DeleteById(@PathVariable Integer id) {
+    public void DeleteById(@PathVariable Long id) {
         this.produitService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    Produit Update(@RequestBody Produit nouvelleProduit, @PathVariable Integer id) {
+    Produit Update(@RequestBody Produit nouvelleProduit, @PathVariable Long id) {
         return this.produitService.Update(nouvelleProduit,id);
     }
 }

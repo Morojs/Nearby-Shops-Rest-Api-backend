@@ -8,7 +8,7 @@ import java.util.Date;
 public class Facture {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idFacture;
+    private Long idFacture;
     private Date dateFcture;
     private double montantFacture;
     @OneToOne @JoinColumn(name = "idCommande",nullable = false)
@@ -18,18 +18,18 @@ public class Facture {
     public Facture() {
 
     }
-    public Facture(Integer idFacture, Date dateFcture, double montantFacture, Commande commande, Payment payment) {
+    public Facture(Long idFacture, Date dateFcture, double montantFacture, Commande commande, Payment payment) {
         this.idFacture = idFacture;
         this.dateFcture = dateFcture;
         this.montantFacture = montantFacture;
         this.commande = commande;
         this.payment = payment;
     }
-    public Integer getIdFacture() {
+    public Long getIdFacture() {
         return idFacture;
     }
 
-    public void setIdFacture(Integer idFacture) {
+    public void setIdFacture(Long idFacture) {
         this.idFacture = idFacture;
     }
 

@@ -23,7 +23,7 @@ public class FactureController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Facture> GetByID(@PathVariable Integer id) {
+    public Optional<Facture> GetByID(@PathVariable Long id) {
         return this.factureService.FindByID(id);
     }
 
@@ -33,12 +33,12 @@ public class FactureController {
     }
 
     @DeleteMapping("/{id}")
-    public void DeleteById(@PathVariable Integer id) {
+    public void DeleteById(@PathVariable Long id) {
         this.factureService.DeleteById(id);
     }
 
     @PutMapping("/{id}")
-    Facture Update(@RequestBody Facture nouvelleFacture, @PathVariable Integer id) {
+    Facture Update(@RequestBody Facture nouvelleFacture, @PathVariable Long id) {
         return this.factureService.Update(nouvelleFacture, id);
     }
 

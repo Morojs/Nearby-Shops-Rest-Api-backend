@@ -1,7 +1,5 @@
 package com.nearby.shops.models;
 
-import org.springframework.stereotype.Service;
-
 import javax.persistence.*;
 
 @Entity
@@ -9,7 +7,7 @@ import javax.persistence.*;
 public class LigneCommande {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idLigneCommande;
+    private Long idLigneCommande;
 
     @ManyToOne
     @JoinColumn(name = "idProduit")
@@ -25,7 +23,7 @@ public class LigneCommande {
     public LigneCommande() {
     }
 
-    public LigneCommande(Integer idLigneCommande, Produit produit, Commande commande, Double montant, Integer quantite) {
+    public LigneCommande(Long idLigneCommande, Produit produit, Commande commande, Double montant, Integer quantite) {
         this.idLigneCommande = idLigneCommande;
         this.produit = produit;
         this.commande = commande;
@@ -40,11 +38,11 @@ public class LigneCommande {
         this.quantite = quantite;
     }
 
-    public Integer getIdLigneCommande() {
+    public Long getIdLigneCommande() {
         return idLigneCommande;
     }
 
-    public void setIdLigneCommande(Integer idLigneCommande) {
+    public void setIdLigneCommande(Long idLigneCommande) {
         this.idLigneCommande = idLigneCommande;
     }
 

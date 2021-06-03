@@ -1,5 +1,7 @@
 package com.nearby.shops.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,8 +11,9 @@ import java.util.List;
 @Table
 public class Abonnement {
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
-        private Integer idAbonnement;
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+        private Long idAbonnement;
         private Date dateAbonnement;
         private String description;
         private double prixAbonnement;
@@ -18,7 +21,7 @@ public class Abonnement {
         private List<ClientAbonne> listClientAbonne=new ArrayList<>();
 
     public Abonnement() {}
-    public Abonnement(int idAbonnement, Date dateAbonnement,String description, double prixAbonnement) {
+    public Abonnement(Long idAbonnement, Date dateAbonnement,String description, double prixAbonnement) {
         this.idAbonnement = idAbonnement;
         this.description=description;
         this.dateAbonnement = dateAbonnement;
@@ -37,7 +40,7 @@ public class Abonnement {
     }
 
 
-    public void setIdAbonnement(Integer idAbonnement) {
+    public void setIdAbonnement(Long idAbonnement) {
         this.idAbonnement = idAbonnement;
     }
 
@@ -53,13 +56,10 @@ public class Abonnement {
         this.listClientAbonne = listClientAbonne;
     }
 
-    public int getIdAbonnement() {
+    public Long getIdAbonnement() {
         return idAbonnement;
     }
 
-    public void setIdAbonnement(int idAbonnement) {
-        this.idAbonnement = idAbonnement;
-    }
 
     public Date getDateAbonnement() {
         return dateAbonnement;

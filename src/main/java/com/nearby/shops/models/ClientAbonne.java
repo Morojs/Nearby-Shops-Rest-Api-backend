@@ -1,5 +1,8 @@
 package com.nearby.shops.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,7 +16,7 @@ public class ClientAbonne extends Personne {
     private String cin;
 
     @ManyToOne
-    @JoinColumn(name = "idAbonnement", nullable = false, updatable = false, insertable = false)
+    @JoinColumn(name = "idAbonnement",updatable = true, insertable = true)
     private Abonnement abonnement;
 
     @OneToMany(targetEntity = Boutique.class, mappedBy = "clientAbonne")
@@ -26,7 +29,7 @@ public class ClientAbonne extends Personne {
 
     }
 
-    public ClientAbonne(Integer id, String nom, String prenom, Date dateNaissance, String motDePasse, String email, String pays, String adresse_1, String adresse_2, String codePostal, String telephone, String fix, String cin, Abonnement abonnement, List<Boutique> listBoutique, List<CarteBancaire> listCarte) {
+    public ClientAbonne(Long id, String nom, String prenom, Date dateNaissance, String motDePasse, String email, String pays, String adresse_1, String adresse_2, String codePostal, String telephone, String fix, String cin, Abonnement abonnement, List<Boutique> listBoutique, List<CarteBancaire> listCarte) {
         super(id, nom, prenom, dateNaissance, motDePasse, email, pays, adresse_1, adresse_2, codePostal, telephone, fix);
         this.cin = cin;
         this.abonnement = abonnement;
